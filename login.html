@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="style/stylelogin.css">
+</head>
+<body>
+    <div class="container">
+        <form class="login-form" id="loginForm">
+            <h2>Masuk</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="message">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+            <p class="default-credentials">Atau gunakan:<br>Username: <strong>mimpiku</strong><br>Password: <strong>mimpikunyata&&4435</strong></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Cek kredensial default
+            if (username === 'mimpiku' && password === 'mimpikunyata&&4435') {
+                window.location.href = 'index.html'; // Arahkan ke halaman home
+            } else {
+                // Cek data yang disimpan di localStorage
+                const storedUsername = localStorage.getItem('username');
+                const storedPassword = localStorage.getItem('password');
+
+                if (username === storedUsername && password === storedPassword) {
+                    window.location.href = 'home.html'; // Arahkan ke halaman home
+                } else {
+                    alert('Username atau password salah!');
+                }
+            }
+        });
+    </script>
+</body>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pendaftaran</title>
+    <link rel="stylesheet" href="style/stylereg.css">
+</head>
+<body>
+    <div class="container">
+        <form class="register-form" id="registerForm">
+            <h2>Daftar</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Konfirmasi Kata Sandi</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Daftar</button>
+            <p class="message">Sudah punya akun? <a href="login.html">Masuk sekarang</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value; // Perbaikan di sini
+
+            // Validasi konfirmasi kata sandi
+            if (password !== confirmPassword) {
+                alert('Kata sandi dan konfirmasi kata sandi tidak cocok!');
+                return;
+            }
+
+            // Simpan data pengguna di localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            // Arahkan ke halaman home setelah pendaftaran
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

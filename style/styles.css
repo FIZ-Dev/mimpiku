@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif; /* Mengatur font untuk seluruh halaman */
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    align-items: center; /* Memusatkan item secara horizontal */
+    justify-content: center; /* Memusatkan item secara vertikal */
+    height: 100vh; /* Mengatur tinggi body agar memenuhi viewport */
+    background-color: #f0f0f0; /* Warna latar belakang */
+    position: relative; /* Mengatur posisi relatif untuk konten */
+    overflow: hidden; /* Mencegah scroll */
+}
+
+.background {
+    position: absolute; /* Memposisikan gambar latar belakang secara absolut */
+    top: 0; /* Menempatkan gambar di atas */
+    left: 0; /* Menempatkan gambar di kiri */
+    right: 0; /* Menempatkan gambar di kanan */
+    bottom: 0; /* Menempatkan gambar di bawah */
+    background-image: url('your-image-url.jpg'); /* Ganti dengan URL gambar Anda */
+    background-size: cover; /* Menyesuaikan gambar agar memenuhi area */
+    background-position: center; /* Memusatkan gambar */
+    filter: blur(8px); /* Mengatur efek blur */
+    z-index: -1; /* Menempatkan gambar di belakang konten lainnya */
+}
+
+header {
+    text-align: center; /* Memusatkan teks di header */
+    margin-bottom: 20px; /* Memberikan jarak di bawah header */
+}
+
+h1 {
+    font-size: 48px; /* Ukuran font untuk judul */
+    margin: 0; /* Menghapus margin default pada h1 */
+}
+
+.button-container {
+    margin: 20px 0; /* Memberikan jarak atas dan bawah untuk kontainer tombol */
+}
+
+.button {
+    display: inline-block; /* Mengatur tombol sebagai inline-block */
+    padding: 10px 20px; /* Memberikan padding dalam tombol */
+    margin: 5px; /* Memberikan margin antar tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-align: center; /* Memusatkan teks dalam tombol */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    border-radius: 5px; /* Membuat sudut tombol menjadi bulat */
+    transition: background-color 0.3s; /* Efek transisi untuk perubahan warna latar belakang */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat tombol di-hover */
+}
+
+.input-container {
+    margin: 20px 0; /* Memberikan jarak atas dan bawah untuk kontainer input */
+    width: 100%; /* Mengatur lebar kontainer input menjadi 100% */
+    max-width: 400px; /* Mengatur lebar maksimum kontainer input */
+}
+
+label {
+    display: block; /* Mengatur label agar tampil sebagai blok */
+    margin-bottom: 8px; /* Memberikan jarak di bawah label */
+    font-weight: bold; /* Membuat teks label menjadi tebal */
+    color: #333; /* Warna teks label */
+}
+
+input[type="text"], textarea {
+    width: 100%; /* Mengatur lebar input dan textarea menjadi 100% dari kontainer */
+    padding: 12px; /* Memberikan padding dalam input dan textarea */
+    border: 1px solid #ccc; /* Mengatur border input dan textarea */
+    border-radius: 5px; /* Membuat sudut input dan textarea menjadi bulat */
+    font-size: 16px; /* Ukuran font untuk teks dalam input dan textarea */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Efek transisi untuk perubahan border dan bayangan */
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #007bff; /* Mengubah warna border saat input atau textarea difokuskan */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Menambahkan bayangan saat difokuskan */
+    outline: none; /* Menghapus outline default */
+}
+
+textarea {
+    resize: vertical; /* Mengizinkan perubahan ukuran hanya secara vertikal */
+    min-height: 100px; /* Mengatur tinggi minimum untuk textarea */
+}
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+    color: #aaa; /* Warna placeholder */
+    font-style: italic; /* Mengatur gaya font placeholder menjadi italic */
+}
+
+#commentsContainer {
+    margin-top: 20px; /* Memberikan jarak di atas kontainer komentar */
+    width: 300px; /* Mengatur lebar kontainer komentar */
+}
+
+.comment-card {
+    background-color: white; /* Warna latar belakang untuk kartu komentar */
+    border: 1px solid #ccc; /* Border untuk kartu komentar */
+    border-radius: 5px; /* Membuat sudut kartu komentar menjadi bulat */
+    padding: 10px; /* Memberikan padding dalam kartu komentar */
+    margin: 5px 0; /* Memberikan margin atas dan bawah untuk kartu komentar */
+}
+
+#postButton {
+    padding: 12px 24px; /* Memberikan padding dalam tombol */
+    background-color: #28a745; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghapus border default */
+    border-radius: 5px; /* Membuat sudut tombol menjadi bulat */
+    font-size: 16px; /* Ukuran font untuk teks tombol */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color 0.3s, transform 0.2s; /* Efek transisi untuk perubahan warna dan transformasi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada tombol */
+}
+
+#postButton:hover {
+    background-color: #218838; /* Warna latar belakang saat tombol di-hover */
+    transform: translateY(-2px); /* Mengangkat tombol sedikit saat di-hover */
+}
+
+#postButton:active {
+    transform: translateY(0); /* Mengembalikan tombol ke posisi semula saat ditekan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mengubah bayangan saat tombol ditekan */
+}
+
+footer {
+    text-align: center; /* Memusatkan teks di footer */
+    margin-top: 20px; /* Memberikan jarak di atas footer */
+    padding: 10px; /* Memberikan padding dalam footer */
+    background-color: #eaeaea; /* Warna latar belakang footer */
+    width: 100%; /* Mengatur lebar footer menjadi 100% */
+}
+
+ .hidden {
+    display: none; /* Menyembunyikan elemen dengan kelas hidden */
+}
