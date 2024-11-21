@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', loadComments); // Memuat komentar saat halaman dimuat
+
 document.getElementById('postButton').addEventListener('click', function() {
     const name = document.getElementById('name').value;
     const dream = document.getElementById('dream').value;
@@ -23,14 +25,20 @@ function saveComment(comment) {
     localStorage.setItem('comments', JSON.stringify(comments));
 }
 
-// Function to display comment
+// Function to display a single comment
 function displayComment(comment) {
     const commentsContainer = document.getElementById('commentsContainer');
     const commentCard = document.createElement('div');
     commentCard.classList.add('comment-card');
-    commentCard.innerHTML = `<strong>${comment.name}</strong><p>${comment.dream}</p>`;
+    commentCard.innerHTML = `<strong>${comment .name}</strong><p>${comment.dream}</p>`;
     
     commentsContainer.appendChild(commentCard);
 }
 
-// Function to load comments from
+// Function to load comments from localStorage
+function loadComments() {
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.forEach(comment => {
+        displayComment(comment); // Menampilkan setiap komentar yang ada
+    });
+}
